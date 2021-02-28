@@ -16,7 +16,7 @@ document.querySelector(".tombol").addEventListener('click', function () {
     Swal.fire("Jawab yang jujur ya!").then(function () {
       Swal.fire("Awas aja kalau kamu bohong", "", "error").then(function () {
 
-        then(function () {
+        (function () {
           const pertanyaan = Swal.fire({
             title: `${nama} kamu sayang sama ${sender}?`,
             showDenyButton: true,
