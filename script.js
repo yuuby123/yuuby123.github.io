@@ -7,18 +7,31 @@ if (url.searchParams.get('by') != null) {
   sender = url.searchParams.get('by');
 } else {
   sender = "Anton";
-  nama = "Fidel";
 }
 
 
 document.querySelector(".tombol").addEventListener('click', function () {
-  Swal.fire("Hallo Bebi", "Aku ada pertanyaan nih buat kamu Bi", "question").then(function () {
+  Swal.fire("Hallo Baby", "Aku ada pertanyaan nih buat kamu By", "question").then(function () {
     Swal.fire("Jawab yang jujur ya!").then(function () {
       Swal.fire("Awas aja kalau kamu bohong", "", "error").then(function () {
 
-        then(function () {
+        const {
+          value: name
+        } = Swal.fire({
+          title: 'Masukin nama kamu dulu',
+          input: 'text',
+          inputLabel: '',
+          showCancelButton: true,
+          inputValidator: (value) => {
+            if (!value) {
+              return 'Isi dulu dong by'
+            } else {
+              nama = value;
+            }
+          }
+        }).then(function () {
           const pertanyaan = Swal.fire({
-            title: `${nama} sayang ga sama ${sender}?`,
+            title: `${nama} kamu sayang sama ${sender}?`,
             showDenyButton: true,
             showCancelButton: false,
             confirmButtonText: `Sayang`,
