@@ -7,6 +7,7 @@ if (url.searchParams.get('by') != null) {
   sender = url.searchParams.get('by');
 } else {
   sender = "Anton";
+  nama = "Fidel";
 }
 
 
@@ -15,21 +16,7 @@ document.querySelector(".tombol").addEventListener('click', function () {
     Swal.fire("Jawab yang jujur ya!").then(function () {
       Swal.fire("Awas aja kalau kamu bohong", "", "error").then(function () {
 
-        const {
-          value: name
-        } = Swal.fire({
-          title: 'Masukin nama kamu dulu',
-          input: 'text',
-          inputLabel: '',
-          showCancelButton: true,
-          inputValidator: (value) => {
-            if (!value) {
-              return 'Isi dulu dong by'
-            } else {
-              nama = value;
-            }
-          }
-        }).then(function () {
+        then(function () {
           const pertanyaan = Swal.fire({
             title: `${nama} kamu sayang sama ${sender}?`,
             showDenyButton: true,
