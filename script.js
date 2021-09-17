@@ -15,14 +15,27 @@ document.querySelector(".tombol").addEventListener('click', function () {
     Swal.fire("Boleh VC ga?😥").then(function () {
       Swal.fire("Boleh ya boleh ya🥺", "", "error").then(function () {
 
-       
+        const {
+          value: name
+        } = Swal.fire({
+          title: 'Bilang iya kalo boleh, kalo endak ga usah bales aja😣',
+          input: 'text',
+          inputLabel: '',
+          showCancelButton: true,
+          inputValidator: (value) => {
+            if (!value) {
+              return 'Isi dulu dong by'
+            } else {
+              nama = value;
+            }
+          }
         }).then(function () {
           const pertanyaan = Swal.fire({
-            title: `${nama} sayang ga sama ${sender}?`,
+            title: `${nama} oh iya kacamataku dah dateng nih😊${sender}?`,
             showDenyButton: true,
             showCancelButton: false,
-            confirmButtonText: `Sayang Banget`,
-            denyButtonText: `Enggak`,
+            confirmButtonText: `mau tau dong`,
+            denyButtonText: `Enggak peduli`,
           }).then((result) => {
             /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
