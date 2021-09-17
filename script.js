@@ -11,24 +11,11 @@ if (url.searchParams.get('by') != null) {
 
 
 document.querySelector(".tombol").addEventListener('click', function () {
-  Swal.fire("Hallo Sayang", "Aku ada pertanyaan nih buat kamu By", "question").then(function () {
-    Swal.fire("Jawab yang jujur ya!").then(function () {
-      Swal.fire("Awas aja kalau kamu bohong", "", "error").then(function () {
+  Swal.fire("Hallo Sayang", "Aku kangen nih:(", "question").then(function () {
+    Swal.fire("Boleh VC ga?😥").then(function () {
+      Swal.fire("Boleh ya boleh ya🥺", "", "error").then(function () {
 
-        const {
-          value: name
-        } = Swal.fire({
-          title: 'Masukin nama kamu dulu',
-          input: 'text',
-          inputLabel: '',
-          showCancelButton: true,
-          inputValidator: (value) => {
-            if (!value) {
-              return 'Isi dulu dong by'
-            } else {
-              nama = value;
-            }
-          }
+       
         }).then(function () {
           const pertanyaan = Swal.fire({
             title: `${nama} sayang ga sama ${sender}?`,
