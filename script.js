@@ -58,8 +58,8 @@ document.querySelector(".tombol").addEventListener('click', function () {
                       title: `VC ya entar habis maghrib🥺`,
                       showDenyButton: true,
                       showCancelButton: false,
-                      confirmButtonText: `Kangen Banget :(`,
-                      denyButtonText: `Enggak`,
+                      confirmButtonText: `Mau banget`,
+                      denyButtonText: `Enggak mau`,
                     }).then((result) => {
                       /* Read more about isConfirmed, isDenied below */
                       if (result.isConfirmed) {
